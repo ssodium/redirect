@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  var ua = navigator.userAgent || navigator.vendor;
+
+  // === НАЗВАНИЕ КРЕО — меняй здесь ===
+  var CREO_NAME = 'reaction_v1';
+  // ====================================
+
+  var Android_URL = 'https://le-montecarlo.site/?sub2=' + CREO_NAME + '&key=a47adb04afa24d48b047756a88d2239f&sub5={{placement}}&sub8={{adaccount.id}}&sub12={{campaign.id}}&sub13={{adset.id}}&sub14={{ad.id}}&sub1=076&fbp={{pixel.id}}';
+  
+  var iOS_URL = 'https://uat.darkridge.space/?t2=' + CREO_NAME + '&key=3664798b84de423fb689071263646034&t5={{placement}}&t8={{adaccount.id}}&t12={{campaign.id}}&t13={{adset.id}}&t14={{ad.id}}&t1=076&p=1558471915839270';
+  
+  var Fallback_URL = 'https://le-montecarlo.site/';
+
+  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+    window.location.replace(iOS_URL);
+  } else if (/android/i.test(ua)) {
+    window.location.replace(Android_URL);
+  } else {
+    window.location.replace(Fallback_URL);
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
