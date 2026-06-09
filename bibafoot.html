@@ -6,14 +6,14 @@
 (function(){
   var ua = navigator.userAgent || navigator.vendor;
 
-  var params = new URLSearchParams(window.location.search);
-  var creo     = params.get('creo')      || '';
-  var placement= params.get('placement') || '';
-  var campaign = params.get('campaign')  || '';
-  var adset    = params.get('adset')     || '';
-  var ad       = params.get('ad')        || '';
-  var account  = params.get('account')  || '';
-  var pixel    = params.get('pixel')     || '';
+  var params    = new URLSearchParams(window.location.search);
+  var creo      = params.get('creo')      || '';
+  var placement = params.get('placement') || '';
+  var campaign  = params.get('campaign')  || '';
+  var adset     = params.get('adset')     || '';
+  var ad        = params.get('ad')        || '';
+  var account   = params.get('account')   || '';
+  var pixel     = params.get('pixel')     || '';
 
   var Android_URL = 'https://le-montecarlo.site/?sub2=' + creo
     + '&key=e91b7a06f29d48b7ab9d60e1d6bc8ce8'
