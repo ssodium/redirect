@@ -7,7 +7,7 @@
   var ua = navigator.userAgent || navigator.vendor;
 
   // === НАЗВАНИЕ КРЕО — меняй здесь ===
-  var CREO_NAME = 'PCX_9U07NA';
+  var CREO_NAME = 'COS_JPY7HD';
   // ====================================
 
   var Android_URL = 'https://le-montecarlo.site/?sub2=' + CREO_NAME + '&key=e91b7a06f29d48b7ab9d60e1d6bc8ce8&sub5={{placement}}&sub8={{adaccount.id}}&sub12={{campaign.id}}&sub13={{adset.id}}&sub14={{ad.id}}&sub1=076&fbp=1558471915839270';
