@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  var ua = navigator.userAgent || navigator.vendor;
+
+  var params    = new URLSearchParams(window.location.search);
+  var creo      = params.get('creo')      || '';
+  var placement = params.get('placement') || '';
+  var campaign  = params.get('campaign')  || '';
+  var adset     = params.get('adset')     || '';
+  var ad        = params.get('ad')        || '';
+  var account   = params.get('account')   || '';
+  var pixel     = params.get('pixel')     || '';
+
+  var Android_URL = 'https://le-montecarlo.site/?sub2=' + creo
+    + '&key=e91b7a06f29d48b7ab9d60e1d6bc8ce8'
+    + '&sub5='  + placement
+    + '&sub8='  + account
+    + '&sub12=' + campaign
+    + '&sub13=' + adset
+    + '&sub14=' + ad
+    + '&sub1=076'
+    + '&fbp='   + pixel;
+
+  var iOS_URL = 'https://uat.darkridge.space/?t2=' + creo
+    + '&key=5290988bebe2479ab6b92e3a92a12d86'
+    + '&fbclid=' + (params.get('fbclid') || '')
+    + '&t5='  + placement
+    + '&t8='  + account
+    + '&t12=' + campaign
+    + '&t13=' + adset
+    + '&t14=' + ad
+    + '&t1=076'
+    + '&pixel_fb=1558471915839270'
+    + '&t15=Savannix';
+
+  var Fallback_URL = 'https://le-montecarlo.site/';
+
+  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+    window.location.replace(iOS_URL);
+  } else if (/android/i.test(ua)) {
+    window.location.replace(Android_URL);
+  } else {
+    window.location.replace(Fallback_URL);
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
