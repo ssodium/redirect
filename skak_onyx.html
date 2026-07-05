@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  var ua = navigator.userAgent || navigator.vendor;
+
+  var params    = new URLSearchParams(window.location.search);
+  var creo      = params.get('creo')      || '';
+  var placement = params.get('placement') || '';
+  var campaign  = params.get('campaign')  || '';
+  var adset     = params.get('adset')     || '';
+  var ad        = params.get('ad')        || '';
+  var account   = params.get('account')   || '';
+  var pixel     = params.get('pixel')     || '';
+
+  var Android_URL = 'https://nexabi.site/?sub2=' + creo
+    + '&key=1a19c42fe054483181e6f869de580052'
+    + '&sub5='  + placement
+    + '&sub8='  + account
+    + '&sub12=' + campaign
+    + '&sub13=' + adset
+    + '&sub14=' + ad
+    + '&sub1=076'
+    + '&fbp='   + pixel;
+
+ var iOS_URL = 'https://supercloverlore.shop/?naming=06RtfKBOS'
+    + '&sub3=' + creo
+    + '&sub9=6cd18a614b1c4f04a89e745bbf09376e'
+    + '&sub4=' + placement
+    + '&sub5=' + account
+    + '&sub6=' + campaign
+    + '&sub7=' + adset
+    + '&sub8=' + ad
+    + '&sub2=076'
+    + '&pixel=1558471915839270';
+
+  var Fallback_URL = 'https://le-montecarlo.site/';
+
+  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+    window.location.replace(iOS_URL);
+  } else if (/android/i.test(ua)) {
+    window.location.replace(Android_URL);
+  } else {
+    window.location.replace(Fallback_URL);
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
